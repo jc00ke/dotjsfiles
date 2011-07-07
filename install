@@ -1,0 +1,14 @@
+#!/bin/bash
+
+files=`ls *.js`
+C=`pwd`
+
+if [ ! -d "$HOME/.js" ]
+then
+  mkdir "$HOME/.js"
+fi
+
+for f in ${files[*]}
+do
+  ln -s ${C}/${f} ~/.js/${f}
+done
