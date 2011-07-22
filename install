@@ -10,6 +10,10 @@ fi
 
 for f in ${files[*]}
 do
-  rm $HOME/.js/${f}
-  ln -s ${C}/${f} $HOME/.js/${f}
+  p=$HOME/.js/${f}
+  if [ ! -e $p ]
+  then
+    rm $p
+    ln -s ${C}/${f} $p
+  fi
 done
