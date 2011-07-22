@@ -10,5 +10,6 @@ fi
 
 for f in ${files[*]}
 do
-  ln -s ${C}/${f} ~/.js/${f}
+  rm $HOME/.js/${f}
+  ln -s ${C}/${f} $HOME/.js/${f}
 done
