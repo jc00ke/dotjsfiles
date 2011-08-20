@@ -5,7 +5,11 @@ $().ready(function() {
 
   $(document).keyup(function(e) {
     if (e.which == 118) {
-      window.location.hash = "#!/retweeted_of_mine"
+      if(window.location.hash == "#!/retweeted_of_mine") {
+        history.back()
+      } else {
+        window.location.hash = "#!/retweeted_of_mine";
+      }
       return false;
     }
   });
